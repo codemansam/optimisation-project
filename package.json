@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/codemansam/optimisation-project/issues"
   },
-  "homepage": "https://github.com/codemansam/optimisation-project#readme"
+  "homepage": "https://github.com/codemansam/optimisation-project#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^2.3.2",
+    "gulp-minify-html": "^1.0.6"
+  }
 }
