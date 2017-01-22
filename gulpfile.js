@@ -5,7 +5,7 @@ var gulp = require('gulp'),
 gulp.task('minify-html', function () {
     gulp.src('pizza.html')
     .pipe(minifyHtml())
-    .pipe(gulp.dest('./dist/'));
+    .pipe(gulp.dest('dist'));
 });
 
 gulp.task('cleanCSS', function() {
