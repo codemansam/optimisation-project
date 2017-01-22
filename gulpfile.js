@@ -9,7 +9,7 @@ gulp.task('minify-html', function () {
 });
 
 gulp.task('cleanCSS', function() {
-  return gulp.src('dev/css/style.css')
+  return gulp.src('dev/css/bootstrap-grid.css')
     .pipe(cleanCSS({compatibility: 'ie8'}))
     .pipe(gulp.dest('./dist/css/'));
 });
