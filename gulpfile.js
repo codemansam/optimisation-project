@@ -11,9 +11,9 @@ gulp.task('minify-html', function () {
 });
 
 gulp.task('cleanCSS', function() {
-  return gulp.src('dist/css/final.css')
+  return gulp.src('dev/css/*.css')
     .pipe(cleanCSS({compatibility: 'ie8'}))
-    .pipe(gulp.dest('dist/css/final'));
+    .pipe(gulp.dest('dist/css/'));
 });
 
 gulp.task('concatCSS', function () {
