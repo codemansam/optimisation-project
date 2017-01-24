@@ -1,7 +1,8 @@
 var gulp = require('gulp'),
     minifyHtml = require("gulp-minify-html"),
     cleanCSS = require('gulp-clean-css'),
-    concatCSS = require('gulp-concat-css');
+    concatCSS = require('gulp-concat-css'),
+    uncss = require('gulp-uncss');
 
 gulp.task('minify-html', function () {
     gulp.src('pizza.html')
@@ -10,14 +11,26 @@ gulp.task('minify-html', function () {
 });
 
 gulp.task('cleanCSS', function() {
-  return gulp.src('dev/css/*.css')
+  return gulp.src('dist/css/final.css')
     .pipe(cleanCSS({compatibility: 'ie8'}))
-    .pipe(gulp.dest('dist/css/'));
+    .pipe(gulp.dest('dist/css/final'));
 });
 
 gulp.task('concatCSS', function () {
   return gulp.src('dist/css/*.css')
-    .pipe(concatCSS('final.css'))
+    .pipe(concatCSS('actualFinal.css'))
+    .pipe(gulp.dest('dist/css/'));
+});
+
+gulp.task('uncss', function() {
+  return gulp.src([
+      'dist/css/realFinal.css'
+    ])
+    .pipe(uncss({
+      html: [
+        'https://codemansam.github.io/pizza.html'
+      ]
+    }))
     .pipe(gulp.dest('dist/css/'));
 });
 

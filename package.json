@@ -19,6 +19,7 @@
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-clean-css": "^2.3.2",
-    "gulp-minify-html": "^1.0.6"
+    "gulp-minify-html": "^1.0.6",
+    "gulp-uncss": "^1.0.6"
   }
 }
