@@ -2,7 +2,8 @@ var gulp = require('gulp'),
     minifyHtml = require("gulp-minify-html"),
     cleanCSS = require('gulp-clean-css'),
     concatCSS = require('gulp-concat-css'),
-    uncss = require('gulp-uncss');
+    uncss = require('gulp-uncss'),
+    minify = require('gulp-minify');
 
 gulp.task('minify-html', function () {
     gulp.src('pizza.html')
@@ -32,6 +33,19 @@ gulp.task('uncss', function() {
       ]
     }))
     .pipe(gulp.dest('dist/css/final'));
+});
+
+gulp.task('compress', function() {
+  gulp.src('dev/js/*.js')
+    .pipe(minify({
+        ext:{
+            src:'-debug.js',
+            min:'.js'
+        },
+        exclude: ['tasks'],
+        ignoreFiles: ['.combo.js', '-min.js']
+    }))
+    .pipe(gulp.dest('dist/js'));
 });
 
 gulp.task('default',['minify-html'],function(){
