@@ -24,14 +24,14 @@ gulp.task('concatCSS', function () {
 
 gulp.task('uncss', function() {
   return gulp.src([
-      'dist/css/realFinal.css'
+      'dist/css/bootstrap-grid.css'
     ])
     .pipe(uncss({
       html: [
         'https://codemansam.github.io/pizza.html'
       ]
     }))
-    .pipe(gulp.dest('dist/css/'));
+    .pipe(gulp.dest('dist/css/final'));
 });
 
 gulp.task('default',['minify-html'],function(){
